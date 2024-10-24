@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.75rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5rem solid rgb(173, 136, 90);
+  font-weight: bold;
+}
+
+#title,
+#author {
+  border: 3px solid black;
+  margin-bottom: 1rem;
+}
+#addBtn {
+  border: 1px solid rgb(20, 19, 19);
+  font-weight: bold;
+}
+#bookList {
+  border: 3px solid black;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  color: rgb(173, 136, 90);
+}
+button{
+    font-weight: bold;
+    border: 0.2rem solid  rgb(173, 136, 90);;
+}
