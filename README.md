@@ -52,7 +52,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://esmaelhussen.netlify.app/)
+- [Live Demo Link](https://esmaelhussen.github.io/Awesome-book/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
