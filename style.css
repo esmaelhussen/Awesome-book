@@ -9,10 +9,9 @@ ul {
 }
 
 li {
-  margin: 0.75rem 0.5rem;
+ padding: 0.2rem 0.5rem;
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.5rem solid rgb(173, 136, 90);
   font-weight: bold;
 }
 
@@ -22,11 +21,12 @@ li {
   margin-bottom: 1rem;
 }
 #addBtn {
-  border: 1px solid rgb(20, 19, 19);
+  border: 2px solid black;
   font-weight: bold;
+  margin-left: 8.5rem;
 }
 #bookList {
-  border: 3px solid black;
+  border: 2px solid black;
 }
 .main {
   display: flex;
@@ -35,5 +35,19 @@ li {
 }
 button{
     font-weight: bold;
-    border: 0.2rem solid  rgb(173, 136, 90);;
+    border: 2px solid  black;
+    box-shadow: 2px 4px 0px black;
+}
+.addbook{
+  justify-items: center;
+}
+li:nth-child(odd) {
+  background-color: #d0d0d0; 
+}
+.line {
+  width: 5rem;
+  border-top: 0.2rem solid black;
+}
+.block{
+  justify-items: center;
 }

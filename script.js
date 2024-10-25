@@ -1,41 +1,50 @@
-let bookCollection = JSON.parse(localStorage.getItem("books")) || [];
+class BookCollection {
+  constructor() {
+    this.books = JSON.parse(localStorage.getItem("books")) || [];
+  }
 
-function displayBooks() {
-  const bookList = document.getElementById("bookList");
-  bookList.innerHTML = "";
-  bookCollection.forEach((book, index) => {
-    const li = document.createElement("li");
-    li.textContent = `"${book.title}" by ${book.author}`;
+  addBook(title, author) {
+    this.books.push({ title, author });
+    this.updateLocalStorage();
+    this.displayBooks();
+  }
 
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    removeBtn.onclick = () => {
-      removeBook(index);
-    };
+  removeBook(index) {
+    this.books = this.books.filter((_, i) => i !== index);
+    this.updateLocalStorage();
+    this.displayBooks();
+  }
 
-    li.appendChild(removeBtn);
-    bookList.appendChild(li);
-  });
+  updateLocalStorage() {
+    localStorage.setItem("books", JSON.stringify(this.books));
+  }
+
+  displayBooks() {
+    const bookList = document.getElementById("bookList");
+    bookList.innerHTML = "";
+    this.books.forEach((book, index) => {
+      const li = document.createElement("li");
+      li.textContent = `"${book.title}" by ${book.author}`;
+
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.onclick = () => this.removeBook(index);
+
+      li.appendChild(removeBtn);
+      bookList.appendChild(li);
+    });
+  }
 }
 
-function addBook(title, author) {
-  bookCollection.push({ title, author });
-  localStorage.setItem("books", JSON.stringify(bookCollection));
-  displayBooks();
-}
-
-function removeBook(index) {
-  bookCollection = bookCollection.filter((_, i) => i !== index);
-  localStorage.setItem("books", JSON.stringify(bookCollection));
-  displayBooks();
-}
+const bookCollection = new BookCollection();
+bookCollection.displayBooks();
 
 document.getElementById("addBtn").onclick = () => {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
 
   if (title && author) {
-    addBook(title, author);
+    bookCollection.addBook(title, author);
     document.getElementById("title").value = "";
     document.getElementById("author").value = "";
   } else {
@@ -43,4 +52,3 @@ document.getElementById("addBtn").onclick = () => {
   }
 };
 
-displayBooks();
