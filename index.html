@@ -7,18 +7,55 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="main">Awesome Book</h1>
-    <h2>All awesome books</h2>
-    <ul id="bookList"></ul>
-<div class="block">
-<div class="line"></div>
-</div>
-    <div class="addbook">
-    <h3>Add a new book</h3>
-    <input type="text" id="title" placeholder="Title" /><br />
-    <input type="text" id="author" placeholder="Author" /><br />
-    <button id="addBtn">Add</button>
-</div>
+    <div class="headers">
+      <h3 class="main">Awesome Books</h3>
+      <nav>
+        <ul>
+          <li><a href="#" id="viewBooks">List</a></li>
+          <li><a href="#" id="addBook">Add new</a></li>
+          <li><a href="#" id="contactInfo">Contact </a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="dateDisplay"></div>
+    <div id="content">
+      <div id="bookListSection">
+        <h2 class="lists">All awesome books</h2>
+        <ul id="bookList"></ul>
+      </div>
+
+      <div id="addBookSection" class="hidden">
+        <div class="lists">
+          <h2>Add a new book</h2>
+          <input type="text" id="title" placeholder="Title" /><br />
+          <input type="text" id="author" placeholder="Author" /><br />
+          <button id="addBtn">Add</button>
+        </div>
+      </div>
+      <div id="contactSection" class="hidden">
+        <div class="lists">
+          <h2 class="contact-title">Contact Information</h2>
+          <div class="Contact-1">
+            Do have any questions or you just want to say "Hello"?
+          </div>
+          <div class="Contact-2">You can reach out to me!</div>
+        </div>
+        <ul>
+          <li class="conta" id="conta">
+            email:
+            <a href="mailto:esmaelhussenabdu@gmail.com"
+              >esmaelhussenabdu@gmail.com</a
+            >
+          </li>
+          <li class="conta">
+            phone number: <a href="tel:+251930670990">+251930670990</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <footer class="copy">
+      <h4 class="copycontent">Copyright&nbsp;&nbsp; ...</h4>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

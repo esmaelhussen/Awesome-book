@@ -52,3 +52,47 @@ document.getElementById("addBtn").onclick = () => {
   }
 };
 
+const showSection = (sectionId) => {
+  document.querySelectorAll("#content > div").forEach((section) => {
+    section.classList.add("hidden");
+  });
+  document.getElementById(sectionId).classList.remove("hidden");
+};
+
+document.getElementById("viewBooks").onclick = () =>
+  showSection("bookListSection");
+document.getElementById("addBook").onclick = () =>
+  showSection("addBookSection");
+document.getElementById("contactInfo").onclick = () =>
+  showSection("contactSection");
+
+showSection("bookListSection");
+
+function getOrdinalSuffix(day) {
+  if (day > 3 && day < 21) return "th";
+  switch (day % 10) {
+    case 1:
+      return "st";
+    case 2:
+      return "nd";
+    case 3:
+      return "rd";
+    default:
+      return "th";
+  }
+}
+
+function updateDate() {
+  const now = new Date();
+  const month = now.toLocaleString("en-US", { month: "long" });
+  const day = now.getDate();
+  const year = now.getFullYear();
+  const time = now.toLocaleTimeString("en-US", { hour12: true });
+
+  const formattedDate = `${month} ${day}${getOrdinalSuffix(
+    day
+  )} ${year}, ${time}`;
+  document.getElementById("dateDisplay").innerText = formattedDate;
+}
+updateDate();
+setInterval(updateDate, 1000);
